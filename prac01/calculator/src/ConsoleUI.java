@@ -55,7 +55,7 @@ public class ConsoleUI {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Введи выражение:");
         String s = br.readLine();
-        System.out.println(calculator.makeSomeBlackMagic(s));
+        System.out.println(calculator.makeSomeBlackMagic("(" + s + ")"));
     }
 
     // Метод для решения одиночного выражения и записи его в файл
@@ -66,7 +66,7 @@ public class ConsoleUI {
         System.out.print("Введи название файла: ");
         String name = br.readLine();
         PrintWriter out = new PrintWriter(name + ".txt", "UTF-8");
-        out.println(calculator.makeSomeBlackMagic(s));
+        out.println(calculator.makeSomeBlackMagic("(" + s + ")"));
         out.close();
     }
 
@@ -85,7 +85,7 @@ public class ConsoleUI {
                 for (String ex : ar) {
                     //System.out.println(calculator.makeSomeBlackMagic(ex));
                     //System.out.println(calculator.makeSomeBlackMagic(ex));
-                    expr.add(ex);
+                    expr.add("(" + ex + ")");
                 }
             }
         }
@@ -112,7 +112,7 @@ public class ConsoleUI {
             while ((str = in.readLine()) != null) {
                 String[] ar=str.split(";");
                 for (String ex : ar) {
-                    out.println(calculator.makeSomeBlackMagic(ex));
+                    out.println(calculator.makeSomeBlackMagic("(" + ex + ")"));
                 }
             }
             out.close();

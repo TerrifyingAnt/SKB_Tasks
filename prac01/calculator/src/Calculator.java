@@ -167,7 +167,7 @@ public class Calculator {
                 if(Debug.debugMode == true)
                     showLittleBlackMagic(n2, n1, sign, solved);
         }
-        if(Character.isDigit(tempDigits.get(0).charAt(0)) && !tempDigits.peek().equals("Zero Division") && !tempDigits.peek().equals("You can't do x power of i")){
+        if((Character.isDigit(tempDigits.get(0).charAt(0)) || tempDigits.get(0).charAt(0) == '-') && !tempDigits.peek().equals("Zero Division") && !tempDigits.peek().equals("You can't do x power of i")){
             //System.out.println("\nTEMP OPERATION" + tempDigits.get(0));
             return tempDigits.get(0);
         }
